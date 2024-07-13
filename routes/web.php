@@ -18,4 +18,4 @@ use App\Http\Controllers\HomeController;
 // });
 Route::get('/',[HomeController::class, 'index']);
 Route::get('/about-us',[HomeController::class, 'aboutUs']);
-Route::get('/service-details',[HomeController::class, 'serviceDetails']);
+Route::get('/{category}/{subcategory}',[HomeController::class, 'serviceDetails']);

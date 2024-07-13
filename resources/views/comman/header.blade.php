@@ -37,104 +37,17 @@
 
 <div class="nav-outer">
 <nav class="nav main-menu">
+
 <ul class="navigation">
-<li class="current dropdown"><a href="index.html">Home</a>
+@foreach($menu as $category)
+<li class="current @if(!empty($category->getSubctegory)) dropdown @endif"><a href="javascript:void(0)">{{$category->application_cate_desc}}</a>
 <ul>
-<li class="dropdown"><a href="index.html">Blue Layouts <span class="badge-menu">Blue</span></a>
-<ul>
-<li><a href="index.html">Home Layout 1</a></li>
-<li><a href="index-2.html">Home Layout 2</a></li>
-<li><a href="index-3.html">Home Layout 3</a></li>
-<li><a href="index-4.html">Home Layout 4</a></li>
+@foreach($category->getSubctegory as $subcategory)
+<li><a href="{{url('/')}}/{{str_replace(' ','-',strtolower($category->application_cate_desc))}}/{{str_replace(' ','-',strtolower($subcategory->application_sub_cate_desc))}}">{{$subcategory->application_sub_cate_desc}}</a></li>
+@endforeach
 </ul>
 </li>
-<li class="dropdown"><a href="index-red.html">Red Layouts <span class="badge-menu badge-color-red">Red</span></a>
-<ul>
-<li><a href="index-red.html">Home Layout 1</a></li>
-<li><a href="index-2-red.html">Home Layout 2</a></li>
-<li><a href="index-3-red.html">Home Layout 3</a></li>
-<li><a href="index-4-red.html">Home Layout 4</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="index-yellow.html">Yellow Layouts <span class="badge-menu badge-color-yellow">Yellow</span></a>
-<ul>
-<li><a href="index-yellow.html">Home Layout 1</a></li>
-<li><a href="index-2-yellow.html">Home Layout 2</a></li>
-<li><a href="index-3-yellow.html">Home Layout 3</a></li>
-<li><a href="index-4-yellow.html">Home Layout 4</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="index-dark.html">Dark Layouts <span class="badge-menu badge-color-dark">Dark</span></a>
-<ul>
-<li><a href="index-dark.html">Home Layout 1</a></li>
-<li><a href="index-2-dark.html">Home Layout 2</a></li>
-<li><a href="index-3-dark.html">Home Layout 3</a></li>
-<li><a href="index-4-dark.html">Home Layout 4</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="index-single.html">Single</a>
-<ul>
-<li><a href="index-single.html">Home Layout 1</a></li>
-<li><a href="index-2-single.html">Home Layout 2</a></li>
-<li><a href="index-3-single.html">Home Layout 3</a></li>
-<li><a href="index-4-single.html">Home Layout 4</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#">Header Styles</a>
-<ul>
-<li><a href="index.html">Header Style 1</a></li>
-<li><a href="index-2.html">Header Style 2</a></li>
-<li><a href="index-3.html">Header Style 3</a></li>
-<li><a href="index-4.html">Header Style 4</a></li>
-</ul>
-</li>
-<li><a href="intro.html">Intro</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#">Pages</a>
-<ul>
-<li><a href="page-about.html">About</a></li>
-<li class="dropdown"><a href="#">Projects</a>
-<ul>
-<li><a href="page-projects.html">Projects List</a></li>
-<li><a href="page-project-details.html">Project Details</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#">Team</a>
-<ul>
-<li><a href="page-team.html">Team List</a></li>
-<li><a href="page-team-details.html">Team Details</a></li>
-</ul>
-</li>
-<li><a href="page-testimonial.html">Testimonial</a></li>
-<li><a href="page-pricing.html">Pricing</a></li>
-<li><a href="page-pricing-switcher.html">Pricing Switcher</a></li>
-<li><a href="page-faq.html">FAQ</a></li>
-<li><a href="page-404.html">Page 404</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#">Services</a>
-<ul>
-<li><a href="page-services.html">Services List</a></li>
-<li><a href="page-service-details.html">Service Details</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#">Shop</a>
-<ul>
-<li><a href="shop-products.html">Products</a></li>
-<li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-<li><a href="shop-product-details.html">Product Details</a></li>
-<li><a href="shop-cart.html">Cart</a></li>
-<li><a href="shop-checkout.html">Checkout</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#">News</a>
-<ul>
-<li><a href="news-grid.html">News Grid</a></li>
-<li><a href="news-details.html">News Details</a></li>
-</ul>
-</li>
-<li><a href="page-contact.html">Contact</a></li>
+@endforeach
 </ul>
 </nav>
 

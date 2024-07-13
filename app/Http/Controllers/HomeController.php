@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -12,7 +13,7 @@ class HomeController extends Controller
     function aboutUs(){
         return view('front.aboutus');
     }
-    function serviceDetails(){
+    function serviceDetails($category , $subcategory){
         return view('front.servicedetails');
     }
 }
