@@ -13,6 +13,10 @@ class HomeController extends Controller
     function aboutUs(){
         return view('front.aboutus');
     }
+
+    function login(){
+        return view('login');   
+    }
     function serviceDetails($category , $subcategory){
         return view('front.servicedetails');
     }

@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $menu = \App\Models\CategoryModel::with('getSubctegory')->where('status','Active')->get();
+        $menu = \App\Models\CategoryModel::with('getSubctegory')->where('type','Menu')->where('status','Active')->orderBy('sequence_no','ASC')->get();
         View::share('menu', $menu);
     }
 }
