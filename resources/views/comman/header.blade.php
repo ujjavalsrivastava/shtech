@@ -28,7 +28,10 @@
 </div>
 </div>
 
-
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 <div class="header-lower">
 
 <div class="main-box">
@@ -42,7 +45,7 @@
 <li class="current @if(!empty($category->getSubctegory)) dropdown @endif"><a href="javascript:void(0)">{{$category->application_cate_desc}}</a>
 <ul>
 @foreach($category->getSubctegory as $subcategory)
-<li><a href="{{url('/')}}/{{str_replace(' ','-',strtolower($category->application_cate_desc))}}/{{str_replace(' ','-',strtolower($subcategory->application_sub_cate_desc))}}">{{$subcategory->application_sub_cate_desc}}</a></li>
+<li><a href="{{url('/')}}/{{$subcategory->cat_url}}/{{$subcategory->sub_cat_url}}">{{$subcategory->application_sub_cate_desc}}</a></li>
 @endforeach
 </ul>
 </li>

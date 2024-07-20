@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\ServiceDetails;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,9 @@ class HomeController extends Controller
         return view('login');   
     }
     function serviceDetails($category , $subcategory){
-        return view('front.servicedetails');
+
+        $details =  ServiceDetails::first();
+
+        return view('front.servicedetails',compact('details'));
     }
 }
