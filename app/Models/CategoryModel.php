@@ -11,7 +11,7 @@ class CategoryModel extends Model
     use HasFactory;
 
     protected $table = 'sr_applications_category';
-
+    
     function getSubctegory() {
         return $this->hasMany(SubcategoryModel::class,'application_cat_code','application_cat_code')->where('status','Active');
     }
