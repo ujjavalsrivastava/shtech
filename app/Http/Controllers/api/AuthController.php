@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use JWTAuth;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -61,6 +62,7 @@ class AuthController extends Controller
            
 
         }
+       
             return response()->json([
             'success' => true,
             'token' => $jwt_token,

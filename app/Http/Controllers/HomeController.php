@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-<<<<<<< HEAD
-use Auth;
-=======
 use App\Models\ServiceDetails;
->>>>>>> 2a8687299fafb2735482ae5201b4e08db646bce9
 
 class HomeController extends Controller
 {
